@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Registro</class>
+ <widget class="QWidget" name="Registro">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="lUsuario">
+     <property name="text">
+      <string>Usuario:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="leUsuario"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="lClave">
+     <property name="text">
+      <string>Clave:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="leClave"/>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="lNombre">
+     <property name="text">
+      <string>Nombre:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="leNombre"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="lApellido">
+     <property name="text">
+      <string>Apellido:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="leApellido"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="lCorreo">
+     <property name="text">
+      <string>Correo:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLineEdit" name="leCorreo"/>
+   </item>
+   <item row="5" column="1">
+    <widget class="QPushButton" name="pbRegistrase">
+     <property name="text">
+      <string>Registrarse</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
