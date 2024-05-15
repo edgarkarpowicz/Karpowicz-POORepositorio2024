@@ -1,0 +1,11 @@
+release/admindb.o
+release/formulario.o
+release/main.o
+release/login.o
+release/manager.o
+release/registro.o
+release/moc_admindb.o
+release/moc_formulario.o
+release/moc_login.o
+release/moc_manager.o
+release/moc_registro.o
