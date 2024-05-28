@@ -1,0 +1,49 @@
+from pymongo import MongoClient
+
+# Para Ingresar Datos a la Colección dentro de la Base de Datos #
+client = MongoClient("mongodb://localhost:27017")
+
+db = client["local"]
+collection = db["usuarios"]
+
+message = {
+    "nombre": "Pedro",
+    "apellido": "Sanchez",
+    "edad": 29,
+    "email": "uncorreo@test.com"
+}
+
+result = collection.insert_one(message)
+print(result.inserted_id)
+
+# Para Imprimir todos los Datos de la Colección dentro de la Base de Datos #
+
+import pprint
+pp = pprint.PrettyPrinter(indent=4)
+for doc in collection.find(): # Se puede usar la Parte de Find para buscar Info en especifico y Imprimirla
+    pp.pprint(doc) # Ejemplo: record_list = collection.find({"nombre": "Manuel"}):
+
+# Obtener Info de Usuario Especifico y Retornarlo al Cliente - Endpoint #
+
+from fastapi import FastAPI
+from bson import ObjectId
+
+app = FastAPI()
+
+# Para probar si el Servidor de FastAPI funciona #
+# El Servidor de FastAPI se abre al poner "uvicorn main:app --reload" en la Terminal #
+# Se puede acceder yendo a http://127.0.0.1:8000/ en el Navegador #
+# Se puede ver todo en http://127.0.0.1:8000/docs en el Navegador #
+@app.get("/")
+async def root():
+    return {"message": "Hola a Ingeniería Informatica"}
+
+# Define un punto final para encontrar usuarios por su nombre
+@app.get("/usuarios/nombre/{nombre_usuario}")
+async def encontrar_usuarios_por_nombre(nombre_usuario: str):
+    # Supongamos que tenemos una colección llamada "usuarios"
+    collection = db["usuarios"]
+    # Busca los usuarios por su nombre en la colección
+    usuarios = list(collection.find({"nombre": nombre_usuario}))
+    return {"usuarios_encontrados": usuarios}
+# Mal planteado no Usar esta ultima parte #
