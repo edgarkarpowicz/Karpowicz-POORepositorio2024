@@ -1,0 +1,14 @@
+git clone https://github.com/edgarkarpowicz/Karpowicz-POORepositorio2024 C:/Users/edgar/Desktop/Repositorio_POO
+
+cd C:/Users/edgar/Desktop/Repositorio_POO
+
+git add .
+
+git config --global user.email "edgarkarpowicz@live.com"
+git config --global user.name "Edgar Karpowicz"
+
+git commit -m "Cambios hechos Localmente desde la Computadora"
+
+git push origin main
+
+Paso Final pide Logearse en GITHUB
